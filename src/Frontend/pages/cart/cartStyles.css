@@ -1,0 +1,225 @@
+/* *************** Cart hero Styling  **************** */
+
+.cart-hero-section {
+  /* margin-top: 4rem; */
+  position: relative;
+  background-image: url("https://cdn.shopify.com/s/files/1/0265/8933/1530/files/bread.jpg?v=1567943980");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 240px;
+}
+.cart-hero-section img {
+  width: 100%;
+}
+.cart-hero-section_heading {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  margin: 0;
+  padding-top: 2rem;
+}
+
+/* **************** Cart Card Details Style ******************** */
+
+.cart-products-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+/* .cart-products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.cart-product {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border: 2px solid transparent;
+  transition: border 0.4s ease-in-out;
+}
+.cart-product:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.cart-product-image-and-details {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cart-product-image-and-details img {
+  height: 170px;
+  width: 120px;
+}
+
+.cart-product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cart-products-wrapper {
+  height: 60vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* width: 60vw; */
+  padding: 0.5rem 5rem;
+}
+
+.cart-product-details__price {
+  font-size: 1.5rem;
+}
+.cart-product-details__price span {
+  font-size: 1rem;
+  color: #9a9a9a;
+  text-decoration: line-through;
+}
+
+.cart-product-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.cart-product-details p {
+  margin: 0;
+}
+
+.cart-product-details h2 {
+  margin: 0;
+}
+.cart-product-details h4 {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.cart-product-details-quantity-cont {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  gap: 1rem;
+}
+.quantity-heading {
+  font-size: 1rem;
+}
+.cart-card-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cart-card-quantity div {
+  cursor: pointer;
+}
+.cart-card-quantity input {
+  width: 2rem;
+  text-align: center;
+}
+
+.cart-card-quantity button {
+  height: 1.4rem;
+  width: 1.4rem;
+  border: 1px solid #9a9a9a;
+  background-color: white;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.2s ease-in-out;
+}
+.cart-card-quantity button:active {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-cart-quantity-cont {
+  display: flex;
+  gap: 1rem;
+}
+
+.cart-prod-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.cart-product .cart-prod-btns button {
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* .cart-product-wishlist-btn {
+  margin-top: 1rem;
+} */
+
+/************ Cart Price Details card********************/
+
+.cart-price-details-card {
+  width: 400px;
+  max-height: 50vh;
+
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  border: 2px solid transparent;
+  transition: border 0.4s ease-in-out;
+}
+
+.cart-price-details-card hr {
+  margin: 1rem 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.cart-price-details-card__heading {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.price-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-details p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.total-amount p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.cart-price-details-card button {
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* *********** Cart - Empty ************ */
+.cart-empty {
+  margin-top: 2rem;
+}
+
+/* Checkout Styles */
+
+.checkout-section {
+  margin-top: 10vh;
+}

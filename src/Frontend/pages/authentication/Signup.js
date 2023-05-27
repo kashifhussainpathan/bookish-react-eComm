@@ -1,0 +1,89 @@
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+
+// import { ProductsNav } from "../products/components/ProductsNav";
+import { AuthContext } from "../../context/auth-context";
+import { Nav } from "../home/homeComponents/Nav";
+
+export const Signup = () => {
+  const { signupHandler, signupInput, setSignupInput } =
+    useContext(AuthContext);
+
+  const signupInputHandler = (e) => {
+    const { name, value } = e.target;
+    setSignupInput({ ...signupInput, [name]: value });
+  };
+
+  return (
+    <>
+      <Nav />
+      <section className="auth-container">
+        <div className="auth-wrapper">
+          <h2 className="auth-heading">Signup</h2>
+          <form onSubmit={signupHandler}>
+            <div className="auth-form-container">
+              <div className="input-text-group pb-1">
+                <label className="pb-05">
+                  Full name<span className="color-text-error">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  name="fullname"
+                  value={signupInput.fullname}
+                  onChange={signupInputHandler}
+                  required
+                />
+              </div>
+              <div className="input-text-group ">
+                <label className="">
+                  Email address<span className="color-text-error">*</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  name="email"
+                  value={signupInput.email}
+                  onChange={signupInputHandler}
+                  required
+                />
+              </div>
+              <div className="input-text-group">
+                <label className="">
+                  Password<span className="color-text-error">*</span>{" "}
+                </label>
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  name="password"
+                  value={signupInput.password}
+                  onChange={signupInputHandler}
+                  required
+                />
+              </div>
+              <div className="input-text-group">
+                <label className="">
+                  Confirm password<span className="color-text-error">*</span>{" "}
+                </label>
+                <input
+                  type="password"
+                  placeholder="Confirm your password"
+                  name="cnfpassword"
+                  value={signupInput.cnfpassword}
+                  onChange={signupInputHandler}
+                  required
+                />
+              </div>
+              <button className="create-new-account-btn button" type={"submit"}>
+                Create new account
+              </button>
+              <div className="create-new-account">
+                <NavLink to="/login">Already have an account ?</NavLink>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </>
+  );
+};
