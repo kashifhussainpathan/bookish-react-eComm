@@ -1,34 +1,33 @@
 import "./profileStyles.css";
-import { useState } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 
 import { Nav } from "../home/homeComponents/Nav";
-import AddressManagement from "../../utils/AddressManagement";
-import { ProfileDetails } from "./profileComponents/Details";
-
-const tabs = {
-  one: <ProfileDetails />,
-  two: <AddressManagement profile />,
-};
 
 export const Profile = () => {
-  const [tabShowing, setTabShowing] = useState("one");
-
-  const handleTabChange = (event) => {
-    setTabShowing(event.target.value);
+  const toggleActive = ({ isActive }) => {
+    return isActive
+      ? "profile-nav-item nav-link-active"
+      : "profile-nav-item nav-link";
   };
 
   return (
     <>
       <Nav />
-      <div className="profile-buttons" style={{ marginTop: "10vh" }}>
-        <button onClick={handleTabChange} value="one">
+      <div className="profile-nav">
+        <NavLink to={"/profile/details"} className={toggleActive}>
           Profile
-        </button>
-        <button onClick={handleTabChange} value="two">
-          Address
-        </button>
+        </NavLink>{" "}
+        {/*address management and order management will be added later on*/}
+        <NavLink to={"/profile/addresses"} className={toggleActive}>
+          Addresses
+        </NavLink>{" "}
+        <NavLink to={"/profile/orders"} className={toggleActive}>
+          Order
+        </NavLink>
       </div>
-      <section className="profile-section">{tabs[tabShowing]}</section>
+      <section className="profile-section">
+        <Outlet />
+      </section>
     </>
   );
 };

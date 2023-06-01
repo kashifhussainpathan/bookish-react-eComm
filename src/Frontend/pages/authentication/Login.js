@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Importing css
 import "./authStyles.css";
@@ -68,7 +68,7 @@ export const Login = () => {
                 Login
               </button>
               <div className="create-new-account">
-                <NavLink to="/signup">Create new account</NavLink>
+                <Link to="/signup">Create new account</Link>
               </div>
             </div>
           </form>

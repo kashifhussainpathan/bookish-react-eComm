@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { ProductsContext } from "../../../context/ProductsContext";
 import { ProductsDataContext } from "../../../context/ProductsDataContext";
@@ -21,12 +21,9 @@ export const Genre = () => {
           <div className="single-genre-item" key={_id}>
             <div className="single-genre-item__image">
               <img src={image} alt={categoryName}></img>{" "}
-              <NavLink
-                to="/products"
-                onClick={() => handleToggleCategory(value)}
-              >
+              <Link to="/products" onClick={() => handleToggleCategory(value)}>
                 <div className="single-genre-item__link">Explore Now</div>
-              </NavLink>
+              </Link>
             </div>
             <h4>{categoryName}</h4>
           </div>

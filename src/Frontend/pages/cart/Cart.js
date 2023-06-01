@@ -1,6 +1,6 @@
 import "./cartStyles.css";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Nav } from "../home/homeComponents/Nav";
 import { CartContext } from "../../context/cart-context";
@@ -42,12 +42,12 @@ export const Cart = () => {
               return (
                 <div className="cart-product" key={_id}>
                   <div className="cart-product-image-and-details">
-                    <NavLink
+                    <Link
                       to="/productdetails"
                       onClick={() => getProductsDetails(_id)}
                     >
                       <img src={image} alt={title} />
-                    </NavLink>
+                    </Link>
 
                     <div className="cart-product-details">
                       <h3>{title}</h3>

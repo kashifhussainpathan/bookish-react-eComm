@@ -1,5 +1,7 @@
+import "../productsStyle.css";
+
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { CartContext } from "../../../context/cart-context";
 import { WishlistContext } from "../../../context/wishlist-context";
@@ -11,6 +13,7 @@ import { BiCartAlt } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // importing img
 import logo from "../../../assets/logo.png";
@@ -19,12 +22,20 @@ import { AuthContext } from "../../../context/auth-context";
 export const ProductsNav = () => {
   const { dispatch } = useContext(ProductsContext);
 
+  const [isProdNavMenuOpen, setIsProdNavMenuOpen] = useState(false);
+
   const { cartItems } = useContext(CartContext);
   const { wishlistItems } = useContext(WishlistContext);
   const { userToken } = useContext(AuthContext);
 
   const totalCartItems = cartItems.length;
   const totalWishlistItems = wishlistItems.length;
+
+  const toggleProdNavMenu = () => {
+    if (window.innerWidth < 768) {
+      setIsProdNavMenuOpen(!isProdNavMenuOpen);
+    }
+  };
 
   return (
     <div>
@@ -43,8 +54,12 @@ export const ProductsNav = () => {
           </h2>
         </div>
 
+        <div className="prod-nav-hamburger" onClick={toggleProdNavMenu}>
+          <GiHamburgerMenu />
+        </div>
+
         {/* Right Side Of Navigation */}
-        <div className="navigation_right_side">
+        <div className="prod-navigation_right_side">
           <p>
             {" "}
             {/* <BiSearch /> */}

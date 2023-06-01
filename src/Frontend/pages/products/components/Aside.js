@@ -32,6 +32,18 @@ export const Aside = () => {
 
       <hr />
 
+      <div>
+        <input
+          className="search_bar"
+          placeholder="Search Products Here..."
+          onChange={(e) =>
+            dispatch({ type: "SEARCH", payload: e.target.value })
+          }
+        ></input>
+      </div>
+
+      <hr />
+
       {/* Price Range */}
       <div className="price-range-filter">
         <div className="price-range-filte__title">

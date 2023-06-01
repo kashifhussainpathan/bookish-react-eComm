@@ -75,12 +75,36 @@ export const CartContextProvider = ({ children }) => {
     }
   };
 
+  const priceBeforeDiscount = Math.round(
+    cartItems.reduce((acc, curr) => acc + Number(curr.prevPrice * curr.qty), 0)
+  );
+
+  const actualPrice = Math.round(
+    cartItems.reduce((acc, curr) => acc + Number(curr.price * curr.qty), 0)
+  );
+
+  const discountedPrice = priceBeforeDiscount - actualPrice;
+
+  const deliveryCharge = 50;
+
+  const grandTotal = Math.round(actualPrice + deliveryCharge);
+
+  const totalItems = cartItems.length;
+
+  const itemOrItems = totalItems > 1 ? "items" : "item";
+
   const value = {
     handleAddToCart,
     cartItems,
     handleRemoveFromCart,
     handleChangeQuantity,
     handleGetCartItems,
+    discountedPrice,
+    itemOrItems,
+    grandTotal,
+    totalItems,
+    actualPrice,
+    deliveryCharge,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

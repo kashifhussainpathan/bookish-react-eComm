@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { ProductsContext } from "../../../context/ProductsContext";
 import { CartContext } from "../../../context/cart-context";
@@ -48,12 +48,9 @@ export const Main = () => {
         } = product;
         return (
           <div className="single-product" key={_id}>
-            <NavLink
-              to="/productdetails"
-              onClick={() => getProductsDetails(_id)}
-            >
+            <Link to="/productdetails" onClick={() => getProductsDetails(_id)}>
               <img src={image} alt={title} />
-            </NavLink>
+            </Link>
 
             <h4>{title} </h4>
             <p> {author}</p>
@@ -76,9 +73,9 @@ export const Main = () => {
             </p>
 
             {isProductInCart ? (
-              <NavLink to="/cart" className="goToCart-btn">
+              <Link to="/cart" className="goToCart-btn">
                 <button className="button">Go To Cart</button>
-              </NavLink>
+              </Link>
             ) : (
               <button
                 className="button"

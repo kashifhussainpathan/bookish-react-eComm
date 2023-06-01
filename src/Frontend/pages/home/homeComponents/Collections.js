@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ProductsContext } from "../../../context/ProductsContext";
 
 export const Collections = () => {
@@ -19,12 +19,12 @@ export const Collections = () => {
               src="https://planit-shopit.netlify.app/static/media/bestsellers.8e12bd5e.jpeg"
               alt="Collection Images"
             />{" "}
-            <NavLink
+            <Link
               to="/products"
               onClick={() => dispatch({ type: "BEST_SELLERS" })}
             >
               <div className="single-category-item__link">Explore Now</div>
-            </NavLink>
+            </Link>
           </div>
           <div className="single-category-item__content">
             <h3 className="title"> Bestsellers </h3>
@@ -38,12 +38,12 @@ export const Collections = () => {
               src="https://planit-shopit.netlify.app/static/media/new%20release.717e793b.jpeg"
               alt="Collection Images"
             />{" "}
-            <NavLink
+            <Link
               to="/products"
               onClick={() => dispatch({ type: "NEW_RELEASES" })}
             >
               <div className="single-category-item__link">Explore Now</div>
-            </NavLink>
+            </Link>
           </div>
           <div className="single-category-item__content">
             <h3 className="title"> New Releases </h3>
@@ -57,12 +57,12 @@ export const Collections = () => {
               src="https://planit-shopit.netlify.app/static/media/expert.c9e96319.jpeg"
               alt="Collection Images"
             />{" "}
-            <NavLink
+            <Link
               to="/products"
               onClick={() => dispatch({ type: "EXPERT_PICKS" })}
             >
               <div className="single-category-item__link">Explore Now</div>
-            </NavLink>
+            </Link>
           </div>
           <div className="single-category-item__content">
             <h3 className="title"> Expert Picks </h3>

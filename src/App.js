@@ -16,6 +16,9 @@ import { Logout } from "./Frontend/pages/authentication/Logout";
 import { ProductDetails } from "./Frontend/pages/productDetails/ProductDetails";
 import { Profile } from "./Frontend/pages/profile/Profile";
 import { Checkout } from "./Frontend/utils/checkout/Checkout";
+import AddressManagement from "./Frontend/utils/AddressManagement";
+import { Orders } from "./Frontend/pages/profile/profileComponents/Orders";
+import { ProfileDetails } from "./Frontend/pages/profile/profileComponents/Details";
 
 function App() {
   return (
@@ -25,12 +28,17 @@ function App() {
         autoClose="400"
         closeOnClick="true"
         draggable="true"
+        borderRadius="10px"
       />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile />}>
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="addresses" element={<AddressManagement />} />
+          <Route path="orders" element={<Orders />} />
+        </Route>
         <Route
           path="/cart"
           element={

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 
 // import { ProductsNav } from "../products/components/ProductsNav";
@@ -78,7 +78,7 @@ export const Signup = () => {
                 Create new account
               </button>
               <div className="create-new-account">
-                <NavLink to="/login">Already have an account ?</NavLink>
+                <Link to="/login">Already have an account ?</Link>
               </div>
             </div>
           </form>

@@ -1,26 +1,76 @@
 import { useContext } from "react";
 import { CartContext } from "../context/cart-context";
+import { toast } from "react-toastify";
+
+import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import { AddressContext } from "../context/address-context";
 
 export const CartBill = () => {
-  const { cartItems } = useContext(CartContext);
+  const {
+    cartItems,
+    discountedPrice,
+    itemOrItems,
+    grandTotal,
+    totalItems,
+    actualPrice,
+    deliveryCharge,
+  } = useContext(CartContext);
 
-  const priceBeforeDiscount = Math.round(
-    cartItems.reduce((acc, curr) => acc + Number(curr.prevPrice * curr.qty), 0)
-  );
+  const { setOrderHistory } = useContext(AddressContext);
+  const navigate = useNavigate();
 
-  const actualPrice = Math.round(
-    cartItems.reduce((acc, curr) => acc + Number(curr.price * curr.qty), 0)
-  );
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
 
-  const discountedPrice = priceBeforeDiscount - actualPrice;
+      script.onload = () => {
+        resolve(true);
+      };
 
-  const deliveryCharge = 50;
+      script.onerror = () => {
+        resolve(false);
+      };
 
-  const grandTotal = Math.round(actualPrice + deliveryCharge);
+      document.body.appendChild(script);
+    });
+  };
 
-  const totalItems = cartItems.length;
+  const displayRazorpay = async (amount) => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
 
-  const itemOrItems = totalItems > 1 ? "items" : "item";
+    if (!res) {
+      alert("You are offline... Failed to load Razorpay SDK");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_llBFT4LK8Lm2fQ",
+      currency: "INR",
+      amount: amount * 100,
+      name: "Bookish",
+      description: "Thanks for purchasing",
+      image: { logo },
+
+      handler: function (response) {
+        const paymentId = response.razorpay_payment_id;
+        toast.success("Payment is successfull");
+        localStorage.setItem("paymentId", JSON.stringify(paymentId));
+        setOrderHistory(cartItems);
+        navigate("/profile/orders");
+      },
+
+      prefill: {
+        name: "Bookish",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
 
   return (
     <div className="cart-price-details-card">
@@ -54,7 +104,9 @@ export const CartBill = () => {
         <hr />
         <p>You will save ₹{discountedPrice} on this order</p>
 
-        <button className="button">Place Order</button>
+        <button className="button" onClick={() => displayRazorpay(grandTotal)}>
+          Place Order
+        </button>
       </div>
     </div>
   );

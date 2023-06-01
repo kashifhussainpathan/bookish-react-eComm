@@ -1,7 +1,7 @@
 // Importing Css
 import "./wishlistStyles.css";
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Nav } from "../home/homeComponents/Nav";
 import { WishlistContext } from "../../context/wishlist-context";
@@ -66,12 +66,12 @@ export const Wishlist = () => {
 
               return (
                 <div className="single-product" key={_id}>
-                  <NavLink
+                  <Link
                     to="/productdetails"
                     onClick={() => getProductsDetails(_id)}
                   >
                     <img src={image} alt={title} />
-                  </NavLink>
+                  </Link>
                   <h4>{title} </h4>
                   <p> {author}</p>
                   <div className="single-product-card-details">

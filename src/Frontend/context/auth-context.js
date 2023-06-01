@@ -56,6 +56,7 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userDetails");
+    localStorage.removeItem("paymentId");
     setIsLoggedIn(false);
     navigate("/login");
   };

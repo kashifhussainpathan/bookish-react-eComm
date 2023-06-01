@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -10,9 +10,9 @@ export const HeroSection = () => {
           The top book collections have been hand-picked for you at the best
           price.
         </p>
-        <NavLink to="/products">
+        <Link to="/products">
           <button> SHOP NOW</button>
-        </NavLink>
+        </Link>
       </div>
     </section>
   );

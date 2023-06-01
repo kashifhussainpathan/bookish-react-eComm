@@ -17,6 +17,7 @@ import {
   ProductDetailsProvider,
   ProductDetailsContext,
 } from "./Frontend/context/product-details-context";
+import { AddressProvider } from "./Frontend/context/address-context";
 
 // Exporting Context
 export { CartContext, ProductDetailsContext };
@@ -28,19 +29,21 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <AuthContextProvider>
-      <ProductsDataProvider>
-        <CartContextProvider>
-          <WishlistContextProvider>
-            <ProductsContextProvider>
-              <ProductDetailsProvider>
-                <App />
-              </ProductDetailsProvider>
-            </ProductsContextProvider>
-          </WishlistContextProvider>
-        </CartContextProvider>
-      </ProductsDataProvider>
-    </AuthContextProvider>
+    <AddressProvider>
+      <AuthContextProvider>
+        <ProductsDataProvider>
+          <CartContextProvider>
+            <WishlistContextProvider>
+              <ProductsContextProvider>
+                <ProductDetailsProvider>
+                  <App />
+                </ProductDetailsProvider>
+              </ProductsContextProvider>
+            </WishlistContextProvider>
+          </CartContextProvider>
+        </ProductsDataProvider>
+      </AuthContextProvider>
+    </AddressProvider>
   </BrowserRouter>
   /* </React.StrictMode> */
 );

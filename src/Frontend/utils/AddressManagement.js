@@ -1,219 +1,209 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { AiFillPlusSquare } from "react-icons/ai";
+import { AddressContext } from "../context/address-context";
 
 const AddressManagement = ({ checkout, profile }) => {
-  const [addresses, setAddresses] = useState([
-    {
-      name: "John Doe",
-      address: "123 Main St",
-      city: "City",
-      state: "State",
-      zip: "12345",
-    },
-    {
-      name: "Jane Smith",
-      address: "456 Elm St",
-      city: "City",
-      state: "State",
-      zip: "67890",
-    },
-  ]);
-
-  const [showAddAddress, setShowAddAddress] = useState(false);
-  const [selectedAddressIndex, setSelectedAddressIndex] = useState(0);
-  const [editIndex, setEditIndex] = useState(-1);
-  const [newAddress, setNewAddress] = useState({
-    name: "",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNewAddress((prevAddress) => ({
-      ...prevAddress,
-      [name]: value,
-    }));
-  };
-
-  const handleAddAddress = () => {
-    setShowAddAddress(true);
-  };
-
-  const validateAddress = () => {
-    for (const key in newAddress) {
-      if (newAddress[key].trim() === "") {
-        return false;
-      }
-    }
-    return true;
-  };
-
-  const handleSaveAddress = () => {
-    if (!validateAddress()) {
-      return;
-    }
-
-    if (editIndex === -1) {
-      setAddresses((prevAddresses) => [...prevAddresses, newAddress]);
-    } else {
-      setAddresses((prevAddresses) => {
-        const updatedAddresses = [...prevAddresses];
-        updatedAddresses[editIndex] = newAddress;
-        return updatedAddresses;
-      });
-      setEditIndex(-1);
-    }
-
-    setNewAddress({
-      name: "",
-      address: "",
-      city: "",
-      state: "",
-      zip: "",
-    });
-    setShowAddAddress(false);
-  };
-
-  const handleEditAddress = (index) => {
-    setEditIndex(index);
-    setNewAddress(addresses[index]);
-    setShowAddAddress(true);
-  };
-
-  const handleDeleteAddress = (index) => {
-    setAddresses((prevAddresses) => {
-      const updatedAddresses = [...prevAddresses];
-      updatedAddresses.splice(index, 1);
-      return updatedAddresses;
-    });
-  };
-
-  const handleSelectAddress = (index) => {
-    setSelectedAddressIndex(index);
-    setShowAddAddress(false);
-  };
+  const {
+    addresses,
+    showAddAddress,
+    setShowAddAddress,
+    selectedAddressIndex,
+    editIndex,
+    newAddress,
+    handleChange,
+    handleAddAddress,
+    handleSaveAddress,
+    handleEditAddress,
+    handleDeleteAddress,
+    handleSelectAddress,
+  } = useContext(AddressContext);
 
   return (
-    <div>
-      <h2> {!checkout && "Address"}</h2>
-
+    <div className="address-management">
       {!showAddAddress && (
-        <button className="button" onClick={handleAddAddress}>
-          Add Address
-        </button>
+        <div className="add-address-button" onClick={handleAddAddress}>
+          <div>
+            <AiFillPlusSquare className="plus-icon" />
+          </div>
+          <p className="add-address-label">Add New Address</p>
+        </div>
       )}
 
       {showAddAddress && (
         <>
           <h3>Add/Edit Address</h3>
 
-          <div>
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={newAddress.name}
-                onChange={handleChange}
-              />
-            </label>
+          <div className="address-fields">
+            <div className="address-fields-flex">
+              <div>
+                <label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={newAddress.name}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="number"
+                    name="mobileNum"
+                    placeholder="Mobile No."
+                    value={newAddress.mobileNum}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div className="address-fields-flex">
+              <div>
+                <label>
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="City"
+                    value={newAddress.city}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+
+              <div>
+                <label>
+                  <input
+                    type="text"
+                    name="postalCode"
+                    placeholder="Pincode"
+                    value={newAddress.postalCode}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label>
+                <textarea
+                  type="text"
+                  name="address"
+                  placeholder="Address"
+                  value={newAddress.address}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
+
+            <div className="address-fields-flex">
+              <div>
+                <label>
+                  <input
+                    type="number"
+                    name="optMobileNum"
+                    placeholder="Mobile No.(Optional)"
+                    value={newAddress.optMobileNum}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+
+              <div className="address-fields__state">
+                <label>
+                  <input
+                    type="text"
+                    name="state"
+                    placeholder="State"
+                    value={newAddress.state}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <label>
-              Address:
-              <input
-                type="text"
-                name="address"
-                value={newAddress.address}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              City:
-              <input
-                type="text"
-                name="city"
-                value={newAddress.city}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              State:
-              <input
-                type="text"
-                name="state"
-                value={newAddress.state}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-
-          <div>
-            <label>
-              ZIP:
-              <input
-                type="text"
-                name="zip"
-                value={newAddress.zip}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-
-          <button className="button" onClick={handleSaveAddress}>
+          <button
+            className="button update-and-cancel__button"
+            onClick={handleSaveAddress}
+          >
             {editIndex === -1 ? "Save Address" : "Update Address"}
           </button>
-          <button className="button" onClick={() => setShowAddAddress(false)}>
+          <button
+            className="button update-and-cancel__button"
+            onClick={() => setShowAddAddress(false)}
+          >
             Cancel
           </button>
         </>
       )}
 
       {addresses.map((address, index) => (
-        <div key={index} className="address-details">
-          <label>
-            <input
-              type="radio"
-              name="address"
-              checked={selectedAddressIndex === index}
-              onChange={() => handleSelectAddress(index)}
-            />
-          </label>{" "}
-          <div>
-            <p>
-              <b>Address :</b> {address.address}
-            </p>{" "}
-            <b>City :</b> {address.city}, <b>State :</b> {address.state},{" "}
-            <b>ZIP :</b> {address.zip}
-          </div>
-          {!checkout && profile ? (
+        <div
+          key={index}
+          className={`address-details ${
+            selectedAddressIndex === index ? "selected-address" : ""
+          }`}
+        >
+          <div
+            className="address-details_radioBtn-detail"
+            onClick={() => handleSelectAddress(index)}
+          >
+            {" "}
+            <label>
+              <input
+                type="radio"
+                name="address"
+                checked={selectedAddressIndex === index}
+                onChange={() => handleSelectAddress(index)}
+              />
+            </label>{" "}
             <div>
-              {" "}
-              <button
-                className="button address-edit-button"
-                onClick={() => handleEditAddress(index)}
-              >
-                Edit
-              </button>
-              <button
-                className="button address-edit-button"
-                onClick={() => handleDeleteAddress(index)}
-              >
-                Delete
-              </button>
+              <p>
+                <b>Address :</b> {address.address}
+              </p>{" "}
+              <div className="address-details__city__state">
+                {" "}
+                <p>
+                  {" "}
+                  <b>City :</b> {address.city},{" "}
+                </p>{" "}
+                <p>
+                  <b>State :</b> {address.state},
+                </p>
+              </div>
+              <p>
+                <b>Postal Code :</b> {address.postalCode}
+              </p>
+              <p>
+                <b>Mobile Number :</b> {address.mobileNum}
+              </p>
             </div>
-          ) : (
-            ""
-          )}
+          </div>
+
+          <div>
+            {!checkout && profile ? (
+              <div>
+                {" "}
+                <button
+                  className="button address-edit-button"
+                  onClick={() => handleEditAddress(index)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="button address-edit-button"
+                  onClick={() => handleDeleteAddress(index)}
+                >
+                  Delete
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       ))}
     </div>

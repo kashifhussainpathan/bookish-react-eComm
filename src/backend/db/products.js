@@ -13,7 +13,7 @@ export const products = [
     prevPrice: "259",
     discount: "40",
     rating: "4.4",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image: "https://m.media-amazon.com/images/I/91zU70Aw9IS.jpg",
@@ -71,7 +71,7 @@ export const products = [
     prevPrice: "299",
     discount: "16",
     rating: "4.7",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:
@@ -164,7 +164,7 @@ export const products = [
     rating: "3.4",
     bestseller: false,
     newRelease: true,
-    expertPick: true,
+    expertPick: false,
     image: "https://m.media-amazon.com/images/I/81+dbC2IMrL.jpg",
   },
   {
@@ -176,7 +176,7 @@ export const products = [
     prevPrice: "699",
     discount: "37",
     rating: "4.6",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:
@@ -193,7 +193,7 @@ export const products = [
     rating: "4.3",
     bestseller: false,
     newRelease: true,
-    expertPick: true,
+    expertPick: false,
     image:
       "https://m.media-amazon.com/images/I/91xqVJ2ZkXL._AC_UY436_FMwebp_QL65_.jpg",
   },
@@ -222,7 +222,7 @@ export const products = [
     prevPrice: "249",
     discount: "28",
     rating: "4.7",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:
@@ -373,7 +373,7 @@ export const products = [
     prevPrice: "269",
     discount: "40",
     rating: "4.5",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:
@@ -403,7 +403,7 @@ export const products = [
     prevPrice: "249",
     discount: "40",
     rating: "4.6",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:
@@ -418,7 +418,7 @@ export const products = [
     prevPrice: "225",
     discount: " 4",
     rating: "4.6",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:
@@ -463,7 +463,7 @@ export const products = [
     prevPrice: "499",
     discount: "39",
     rating: "4.6",
-    bestseller: true,
+    bestseller: false,
     newRelease: false,
     expertPick: true,
     image:

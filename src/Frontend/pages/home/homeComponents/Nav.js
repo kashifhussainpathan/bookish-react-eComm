@@ -1,27 +1,36 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { CartContext } from "../../../context/cart-context";
 import { WishlistContext } from "../../../context/wishlist-context";
 import { AuthContext } from "../../../context/auth-context";
 
 // Importing React Icons
-import { BiSearch } from "react-icons/bi";
+// import { BiSearch } from "react-icons/bi";
 import { BiCartAlt } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShopping } from "react-icons/ai";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // Importing logo
 import logo from "../../../assets/logo.png";
 
 export const Nav = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
   const { cartItems } = useContext(CartContext);
   const { wishlistItems } = useContext(WishlistContext);
   const { userToken } = useContext(AuthContext);
 
   const totalCartItems = cartItems.length;
   const totalWishlistItems = wishlistItems.length;
+
+  const toggleMenu = () => {
+    if (window.innerWidth < 768) {
+      setMenuOpen(!isMenuOpen);
+    }
+  };
 
   return (
     <nav className="navigation">
@@ -35,18 +44,18 @@ export const Nav = () => {
           <NavLink to="/">BOOKISH </NavLink>{" "}
         </h2>
       </div>
-      <div className="navigation_right_side">
-        <p>
+
+      <div className="nav-hamburger" onClick={toggleMenu}>
+        <GiHamburgerMenu />
+      </div>
+
+      <div className={`navigation_right_side ${isMenuOpen ? "show" : ""}`}>
+        {/* <p>
           {" "}
           <NavLink to="/products">
             <BiSearch />
           </NavLink>
-          {/* <input
-            className="search_bar"
-            type="text"
-            placeholder="Search Book Here..."
-          /> */}
-        </p>
+        </p> */}
 
         <NavLink to="/products">
           {" "}
@@ -71,7 +80,7 @@ export const Nav = () => {
         </NavLink>
 
         {userToken ? (
-          <NavLink to="/profile">
+          <NavLink to="/profile/details">
             <p>
               <IoPersonCircleOutline />
             </p>
