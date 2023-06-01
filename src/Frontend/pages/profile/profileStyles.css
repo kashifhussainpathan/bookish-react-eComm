@@ -1,12 +1,29 @@
+.profile-nav {
+  margin-top: 15vh;
+}
+
+.profile-nav .profile-nav-item {
+  background-color: rgb(235, 235, 235);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.profile-nav .nav-link-active {
+  color: rgb(235, 235, 235);
+  background-color: var(--primary-color);
+}
+
 .profile-section {
-  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.profile-buttons {
-  margin-top: 10vh;
-}
+
 .profile-wrapper {
   display: flex;
   justify-content: flex-start;
@@ -16,12 +33,12 @@
 /* Styling Profile Container */
 
 .profile-container {
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary-color);
   border-radius: 10px;
   width: 400px;
   padding: 1.5rem 0;
-  border: 2px solid transparent;
   transition: border 0.4s ease-in-out;
+  margin-top: 2rem;
 }
 
 .profile-container:hover {
@@ -35,6 +52,59 @@
 }
 
 /* Styling Profile Address */
+
+.address-management {
+  margin-top: 2rem;
+  height: 50vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* .address-fields {
+  text-align: left;
+} */
+
+.address-fields input,
+.address-fields textarea {
+  padding: 0.5rem 0;
+  padding-left: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+.address-fields input:hover,
+.address-fields textarea:hover {
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+.address-fields input:focus,
+.address-fields textarea:focus {
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+
+.address-fields textarea {
+  margin-bottom: 1rem;
+}
+
+.address-fields textarea {
+  width: 350px;
+  height: 100px;
+}
+.update-and-cancel__button {
+  margin-right: 0.5rem;
+}
+.address-fields-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .profile-address {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -59,12 +129,19 @@
 }
 
 .address-details {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   margin: 1rem 0;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-  padding: 0.5rem;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
   gap: 2rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.selected-address {
+  border: 2px solid var(--primary-color);
 }
 
 .address-details p {
@@ -73,6 +150,122 @@
   margin-bottom: 0.5rem;
 }
 
+.address-details_radioBtn-detail {
+  margin-bottom: 1rem;
+}
+.address-details__city__state {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 .address-edit-button {
+  margin-bottom: 0.5rem;
   margin-left: 0.5rem;
+}
+
+.add-address-button {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  /* margin-top: 1.25rem; */
+}
+
+.add-address-button p {
+  margin: 0;
+}
+
+.plus-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+/* ************************* Order Section ***************************** */
+.order-section {
+  margin-top: 2rem;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.order-section p {
+  margin: 0.5rem;
+}
+
+.order-img {
+  width: 350px;
+}
+
+.ordered-products-section {
+  margin-top: 2rem;
+  height: 250px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.ordered-produts-container {
+  width: 300px;
+  margin: auto;
+}
+
+.ordered-produts-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 1rem 0;
+  border: 2px solid transparent;
+  transition: border 0.3s ease-in-out;
+}
+
+.ordered-produts-wrapper:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.ordered-product-details {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.ordered-product-details p {
+  font-size: 1rem;
+}
+
+.ordered-product-details p:nth-child(1) {
+  color: var(--primary-color);
+}
+
+.ordered-product-details span {
+  font-weight: 500;
+}
+
+.ordered-product-img img {
+  height: 100px;
+  margin-left: 2rem;
+}
+
+.order-details p {
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.order-details span {
+  font-weight: 600;
+}
+
+.order-address p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.order-address span {
+  font-weight: 600;
 }

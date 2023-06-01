@@ -12,14 +12,15 @@
 }
 
 .product-details-wrapper {
+  margin-top: 12vh;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border-radius: 10px;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
 }
@@ -113,36 +114,60 @@
 
 .product-details-buttons {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0.5rem 0;
+}
+.product-details-buttons button {
+  margin: 0.2rem 0;
 }
 
 /* Responsive typography using media queries */
 
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
+  .product-details-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 70%;
+    margin-top: 0;
   }
 
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  p {
-    font-size: 1.125rem;
+  .product-details-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  h1 {
-    font-size: 3rem;
+  .product-details-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    width: auto;
+    margin-top: 0;
   }
 
-  h2 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1.25rem;
+  .product-details-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0;
   }
 }

@@ -1,4 +1,25 @@
 /* ******************* Styling Navigation  ******************** */
+.products-container .responsive-filters-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  display: inline-block;
+  z-index: 999;
+  color: #fff;
+  font-size: 1.7rem;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0px 0px;
+}
+
+.productsNavigation .prod-nav-hamburger {
+  font-size: 1.6rem;
+  position: relative;
+  margin-right: 2rem;
+  display: block;
+}
+
 .productsNavigation {
   display: flex;
   justify-content: space-between;
@@ -22,7 +43,7 @@
   font-size: 1.6rem;
 }
 .productsNavigation .logo {
-  margin: 0rem 0rem 0rem 2.5rem;
+  margin: 0rem 0rem 0rem 2rem;
   display: flex;
   align-items: center;
   gap: 0;
@@ -31,15 +52,27 @@
   text-decoration: none;
   color: var(--primary-color);
 }
-.navigation_right_side {
+.productsNavigation .prod-navigation_right_side {
+  position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  margin-right: 2.5rem;
+  gap: 0;
+  margin-right: 0;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 0px 0px 10px;
+  opacity: 1;
+  right: -5rem;
+  top: 10vh;
+  padding: 0 2rem 0 1.5rem;
+  background-color: white;
+  /* height: 90vh; */
+  transition: all 0.3s ease-in-out;
 }
 
-.navigation_right_side .search_bar {
+.productsNavigation .prod-navigation_right_side .search_bar {
   margin-bottom: 1rem;
+  display: none;
 }
 
 .productsNavigation input {
@@ -82,11 +115,38 @@
 } */
 .products-aside-section {
   overflow: scroll;
-  margin-top: 0.5rem;
-  width: 20vw;
+  margin-top: 10vh;
+  /* width: 40vw; */
   height: 90vh;
   position: fixed;
-  /* background-color: hsl(220, 27%, 98%); */
+  overflow-x: hidden;
+  background-color: white;
+  z-index: 999;
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  left: -20rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.showFilters {
+  left: 0;
+}
+
+.search_bar {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  width: 70%;
+}
+
+.search_bar:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.search_bar:focus {
+  border: 2px solid var(--primary-color);
 }
 
 .products-aside-section hr {
@@ -150,10 +210,11 @@
 }
 /* ******************* Styling Main section  ******************** */
 .products-main-section {
-  width: 80vw;
-  float: right;
+  /* width: 90vw;  */
+  margin-top: 12vh;
+  float: none;
   overflow: scroll;
-  height: 90vh;
+  height: 85vh;
   overflow-x: hidden;
 }
 .products-wrapper {
@@ -277,29 +338,115 @@
 /* Responsive typography using media queries */
 
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
+  .products-container .responsive-filters-button {
+    /* margin-top: 1rem; */
+    display: none;
   }
 
-  h2 {
-    font-size: 1.75rem;
+  .productsNavigation .prod-nav-hamburger {
+    display: none;
   }
 
-  p {
-    font-size: 1.125rem;
+  .products-aside-section {
+    overflow: scroll;
+    margin-top: 0.5rem;
+    width: 30vw;
+    height: 90vh;
+    position: fixed;
+    overflow-x: hidden;
+    display: block;
+    background-color: none;
+    z-index: 999;
+    /* display: none; */
+    top: 10vh;
+    left: 0;
+  }
+
+  .products-main-section {
+    width: 70vw;
+    float: right;
+    overflow: scroll;
+    height: 87vh;
+    overflow-x: hidden;
+  }
+
+  .productsNavigation .prod-navigation_right_side {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-right: 2.5rem;
+    padding: 0;
+    opacity: 0.85;
+    height: 10vh;
+    box-shadow: none;
+    top: 0;
+    right: 0;
+  }
+
+  .products-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    /* padding-left: 0.5rem; */
+    gap: 2rem;
+  }
+
+  .productsNavigation .prod-navigation_right_side .search_bar {
+    margin-bottom: 1rem;
+    display: inline-block;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  h1 {
-    font-size: 3rem;
+  .products-container .responsive-filters-button {
+    /* margin-top: 1rem; */
+    display: none;
   }
 
-  h2 {
-    font-size: 2rem;
+  .productsNavigation .prod-nav-hamburger {
+    display: none;
   }
 
-  p {
-    font-size: 1.25rem;
+  .products-aside-section {
+    overflow: scroll;
+    margin-top: 0.5rem;
+    width: 20vw;
+    height: 90vh;
+    position: fixed;
+    overflow-x: hidden;
+    display: block;
+    /* background-color: hsl(220, 27%, 98%); */
+    background-color: none;
+    z-index: 999;
+    /* display: none; */
+    top: 10vh;
+    left: 0;
+  }
+
+  .products-main-section {
+    width: 80vw;
+    float: right;
+    overflow: scroll;
+    height: 87vh;
+    overflow-x: hidden;
+  }
+
+  .products-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    /* padding-left: 0.5rem; */
+    gap: 2rem;
+  }
+
+  .productsNavigation .prod-navigation_right_side .search_bar {
+    margin-bottom: 1rem;
+    display: inline-block;
   }
 }
