@@ -9,6 +9,7 @@ import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AuthContext } from "../../../context/auth-context";
 import { ProductDetailsContext } from "../../../context/product-details-context";
+import { ProductsDataContext } from "../../../context/ProductsDataContext";
 
 export const Main = () => {
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ export const Main = () => {
   const { getProductsDetails } = useContext(ProductDetailsContext);
 
   const { finalFilteredProducts } = useContext(ProductsContext);
+
+  const { isLoader } = useContext(ProductsDataContext);
 
   const { cartItems, handleAddToCart } = useContext(CartContext);
 

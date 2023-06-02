@@ -19,7 +19,7 @@ export const Products = () => {
   return (
     <div className="products-container">
       {/* Products Page */}
-      <Nav />
+      <Nav productPage />
       <AiFillFilter
         className="responsive-filters-button"
         onClick={toggleFilters}

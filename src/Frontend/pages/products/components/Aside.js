@@ -42,7 +42,7 @@ export const Aside = () => {
         ></input>
       </div>
 
-      <hr />
+      <hr className="hr-below-search" />
 
       {/* Price Range */}
       <div className="price-range-filter">

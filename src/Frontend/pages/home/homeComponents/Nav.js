@@ -15,10 +15,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 // Importing logo
 import logo from "../../../assets/logo.png";
+import { ProductsContext } from "../../../context/ProductsContext";
 
-export const Nav = () => {
+export const Nav = ({ productPage }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
+  const { dispatch } = useContext(ProductsContext);
   const { cartItems } = useContext(CartContext);
   const { wishlistItems } = useContext(WishlistContext);
   const { userToken } = useContext(AuthContext);
@@ -56,6 +58,18 @@ export const Nav = () => {
             <BiSearch />
           </NavLink>
         </p> */}
+
+        {productPage && (
+          <div>
+            <input
+              className="search_bar_nav"
+              placeholder="Search Products Here..."
+              onChange={(e) =>
+                dispatch({ type: "SEARCH", payload: e.target.value })
+              }
+            ></input>
+          </div>
+        )}
 
         <NavLink to="/products">
           {" "}

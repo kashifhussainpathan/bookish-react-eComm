@@ -20,6 +20,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="All"
+            id="All"
             checked={state.category.ALL_CATEGORY}
             onChange={handleToggleAllCategory}
           />{" "}
@@ -32,6 +33,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Self Help"
+            id="Self Help"
             checked={state.category.SELF_HELP}
             onChange={() => handleToggleCategory("SELF_HELP")}
           />{" "}
@@ -44,6 +46,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Literature"
+            id="Literature"
             checked={state.category.LITERATURE}
             onChange={() => handleToggleCategory("LITERATURE")}
           />{" "}
@@ -56,6 +59,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Spirituality"
+            id="Spirituality"
             checked={state.category.SPIRITUALITY}
             onChange={() => handleToggleCategory("SPIRITUALITY")}
           />{" "}
@@ -68,6 +72,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Science-Fiction"
+            id="Science Fiction"
             checked={state.category.SCIENCE_FICTION}
             onChange={() => handleToggleCategory("SCIENCE_FICTION")}
           />{" "}
@@ -80,6 +85,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Biographies"
+            id="Biographies"
             checked={state.category.BIOGRAPHIES}
             onChange={() => handleToggleCategory("BIOGRAPHIES")}
           />{" "}
@@ -92,6 +98,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Mythology"
+            id="Mythology"
             checked={state.category.MYTHOLOGY}
             onChange={() => handleToggleCategory("MYTHOLOGY")}
           />{" "}
@@ -104,6 +111,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Contemporary-Fiction"
+            id="Contemporary-Fiction"
             checked={state.category.CONTEMPORARY_FICTION}
             onChange={() => handleToggleCategory("CONTEMPORARY_FICTION")}
           />{" "}
@@ -116,6 +124,7 @@ export const Category = () => {
           <input
             type="checkbox"
             name="Psychological-Thriller"
+            id="Psychological-Thriller"
             checked={state.category.PSYCHOLOGICAL_THRILLER}
             onChange={() => handleToggleCategory("PSYCHOLOGICAL_THRILLER")}
           />{" "}
