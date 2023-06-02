@@ -11,6 +11,7 @@ export const Collections = () => {
           <input
             type="checkbox"
             name="Best Sellers"
+            id="Best Sellers"
             checked={state.collections.BEST_SELLERS}
             onChange={() => dispatch({ type: "BEST_SELLERS" })}
           />{" "}
@@ -22,6 +23,7 @@ export const Collections = () => {
           <input
             type="checkbox"
             name="New Releases"
+            id="New Releases"
             checked={state.collections.NEW_RELEASES}
             onChange={() => dispatch({ type: "NEW_RELEASES" })}
           />{" "}
@@ -33,6 +35,7 @@ export const Collections = () => {
           <input
             type="checkbox"
             name="Expert Picks"
+            id="Expert Picks"
             checked={state.collections.EXPERT_PICKS}
             onChange={() => dispatch({ type: "EXPERT_PICKS" })}
           />{" "}
