@@ -91,9 +91,12 @@
 .address-fields textarea {
   margin-bottom: 1rem;
 }
+.address-fields input {
+  width: 130px;
+}
 
 .address-fields textarea {
-  width: 350px;
+  width: 280px;
   height: 100px;
 }
 .update-and-cancel__button {
@@ -268,4 +271,24 @@
 
 .order-address span {
   font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .address-fields textarea {
+    width: 350px;
+    height: 100px;
+  }
+  .address-fields input {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .address-fields textarea {
+    width: 350px;
+    height: 100px;
+  }
+  .address-fields input {
+    width: auto;
+  }
 }
