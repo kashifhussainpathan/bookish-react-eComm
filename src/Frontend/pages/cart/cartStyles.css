@@ -255,6 +255,7 @@ input::-webkit-inner-spin-button {
   .cart-price-details-card {
     margin-top: 0;
     width: 400px;
+    margin: auto;
     max-height: 50vh;
     border-radius: 10px;
     padding: 1rem 1.5rem;
@@ -306,6 +307,7 @@ input::-webkit-inner-spin-button {
   .cart-price-details-card {
     margin-top: 0;
     width: 400px;
+    margin: auto;
     max-height: 50vh;
     border-radius: 10px;
     padding: 1rem 1.5rem;
@@ -317,7 +319,6 @@ input::-webkit-inner-spin-button {
     height: 60vh;
     overflow: scroll;
     overflow-x: hidden;
-    /* width: 60vw; */
     padding: 0.5rem 5rem;
   }
 

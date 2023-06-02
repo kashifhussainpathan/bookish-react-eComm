@@ -139,6 +139,12 @@
   outline: none;
   border: 2px solid rgba(0, 0, 0, 0.2);
   width: 70%;
+  margin: auto;
+  display: block;
+}
+
+.hr-below-search {
+  display: block;
 }
 
 .search_bar:hover {
@@ -399,6 +405,18 @@
     margin-bottom: 1rem;
     display: inline-block;
   }
+
+  .search_bar {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 70%;
+    display: none;
+  }
+  .hr-below-search {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -448,5 +466,17 @@
   .productsNavigation .prod-navigation_right_side .search_bar {
     margin-bottom: 1rem;
     display: inline-block;
+  }
+
+  .search_bar {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 70%;
+    display: none;
+  }
+  .hr-below-search {
+    display: none;
   }
 }
