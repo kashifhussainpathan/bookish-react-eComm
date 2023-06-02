@@ -13,18 +13,17 @@ html {
 
 button,
 svg,
-input {
+input,
+label {
   cursor: pointer;
 }
 
 ::-webkit-scrollbar {
   width: 0.5em;
-  /* background-color: transparent; */
 }
 
 ::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0.08);
-  /* border: none; */
   border-radius: 2rem;
 }
 
@@ -59,6 +58,13 @@ input {
   border-radius: 10px !important;
 }
 
+.Toastify__toast-body {
+  font-size: 3vw; /* font size is 3% of viewport width */
+}
+.Toastify__toast {
+  width: 50%; /* decrease the width to 80% of the container */
+}
+
 /* Headings */
 h1 {
   font-size: 2rem;
@@ -84,6 +90,12 @@ p {
   p {
     font-size: 1.125rem;
   }
+  .Toastify__toast-body {
+    font-size: 16px; /* default font size */
+  }
+  .Toastify__toast {
+    width: 100%; /* decrease the width to 80% of the container */
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -97,5 +109,11 @@ p {
 
   p {
     font-size: 1.25rem;
+  }
+  .Toastify__toast-body {
+    font-size: 16px; /* default font size */
+  }
+  .Toastify__toast {
+    width: 100%; /* decrease the width to 80% of the container */
   }
 }
