@@ -5,8 +5,8 @@
 <h2>How to install and run locally ? </h2>
 
 ```
-$ git clone https://github.com/Rohanmond/FashiFy-react.git
-$ cd FashiFy-react/fashify
+$ git clone https://github.com/kashifhussainpathan/bookish-react-eComm
+$ cd bookish
 $ npm install
 $ npm start
 ```
