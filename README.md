@@ -1,4 +1,4 @@
-<img src="../public/logo.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;"> <h1 align="center">BOOKISH</h1>
+<img src="./public/logo.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;"> <h1 align="center">BOOKISH</h1>
 
 <p align="center">An Ecommerce website for best books </p>
 <hr/>
