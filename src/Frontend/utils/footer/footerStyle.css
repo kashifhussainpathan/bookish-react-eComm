@@ -1,0 +1,129 @@
+/* .footer-section {
+  height: 10vh;
+  background-color: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.footer-social-media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+}
+
+.footer-social-media-icons a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  height: 40px;
+  width: 40px;
+} */
+
+/* Footer styles */
+
+footer {
+  background-color: #fff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 5rem;
+}
+
+.footer-links {
+  display: none;
+}
+.footer-contact {
+  display: none;
+}
+
+.footer-links ul,
+.footer-social ul,
+.footer-contact {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links h4,
+.footer-social h4,
+.footer-contact h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin-bottom: 5px;
+}
+
+.footer-links ul li a,
+.footer-social ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.footer-contact p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.footer-credit {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-credit p {
+  margin: 0;
+}
+.footer-links {
+  text-align: start;
+}
+
+.footer-container h4 {
+  color: var(--primary-color);
+}
+
+/* Example social media icons using Font Awesome */
+.footer-social ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+.footer-social ul {
+  display: flex;
+}
+
+/* Responsive typography using media queries */
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 3rem;
+  }
+
+  .footer-links {
+    display: block;
+  }
+  .footer-contact {
+    display: block;
+  }
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+} */

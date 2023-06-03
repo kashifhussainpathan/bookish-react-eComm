@@ -5,6 +5,7 @@ import { Genre } from "./homeComponents/Genre";
 
 // Importing Css
 import "./homeStyles.css";
+import { Footer } from "../../utils/footer/Footer";
 
 export const Home = () => {
   return (
@@ -20,6 +21,9 @@ export const Home = () => {
 
       {/* Genre Section */}
       <Genre />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
