@@ -2,6 +2,7 @@
   <img src="https://bookish-kp.vercel.app/static/media/logo.508d857b57084282a17d.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;">
 </div> <h1 align="center">BOOKISH</h1>
 
+<p align="center"> <a href=“https://bookish-kp.vercel.app/”>Try it out now >></a> </p>
 <p align="center">An Ecommerce website for best books </p>
 <hr/>
 <h2>How to install and run locally ? </h2>
