@@ -37,13 +37,15 @@ export const Nav = ({ productPage }) => {
   return (
     <nav className="navigation">
       <div className="logo">
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => dispatch({ type: "CLEAR" })}>
           {" "}
           <img src={logo} alt="logo" />
         </NavLink>
         <h2>
           {" "}
-          <NavLink to="/">BOOKISH </NavLink>{" "}
+          <NavLink to="/" onClick={() => dispatch({ type: "CLEAR" })}>
+            BOOKISH{" "}
+          </NavLink>{" "}
         </h2>
       </div>
 
