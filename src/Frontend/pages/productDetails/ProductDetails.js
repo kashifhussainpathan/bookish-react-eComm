@@ -53,7 +53,7 @@ export const ProductDetails = () => {
       <>
         <Nav />
         <div className="product-details-section">
-          <div className="product-details-wrapper">
+          <div className="product-details-wrapper loader-Center">
             <img src={loader} alt={title} />{" "}
           </div>
         </div>

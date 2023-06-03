@@ -21,8 +21,8 @@ export const CartPriceDetails = () => {
           <hr />
 
           <div className="cart-price-details-container">
-            {cartItems.map(({ title, qty, price }) => (
-              <div className="price-details">
+            {cartItems.map(({ _id, title, qty, price }) => (
+              <div className="price-details" key={_id}>
                 <p>
                   {title} ({qty})
                 </p>
