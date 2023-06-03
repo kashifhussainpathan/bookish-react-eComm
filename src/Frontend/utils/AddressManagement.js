@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AiFillPlusSquare } from "react-icons/ai";
 import { AddressContext } from "../context/address-context";
+import { stateArr } from "./StateArr";
 
 const AddressManagement = ({ checkout, profile }) => {
   const {
@@ -111,16 +112,18 @@ const AddressManagement = ({ checkout, profile }) => {
                 </label>
               </div>
 
-              <div className="address-fields__state">
-                <label>
-                  <input
-                    type="text"
-                    name="state"
-                    placeholder="State"
-                    value={newAddress.state}
-                    onChange={handleChange}
-                  />
-                </label>
+              <div>
+                <select
+                  className="address_choose_state"
+                  name="state"
+                  value={newAddress.state}
+                  onChange={handleChange}
+                >
+                  <option>Choose State</option>
+                  {stateArr.map((el, index) => (
+                    <option key={index}>{el}</option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
