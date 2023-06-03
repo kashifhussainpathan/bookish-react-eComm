@@ -1,4 +1,6 @@
-<img src="./public/logo.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;"> <h1 align="center">BOOKISH</h1>
+<div align="center">
+  <img src="./public/logo.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;">
+</div> <h1 align="center">BOOKISH</h1>
 
 <p align="center">An Ecommerce website for best books </p>
 <hr/>
@@ -43,8 +45,3 @@ $ npm start
 - React Router v6
 - Vanilla CSS
 - Razorpay payment gateway
-
-<!-- <p align="center">
-  <img src="../public/logo.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;">
-</p><h1 align="center">BOOKISH</h1><p align="center">An Ecommerce website for best books </p>
- -->
