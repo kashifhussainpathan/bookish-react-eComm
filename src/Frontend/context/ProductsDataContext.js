@@ -5,8 +5,10 @@ export const ProductsDataContext = createContext();
 export const ProductsDataProvider = ({ children }) => {
   const [productsData, setProductsData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getProducts = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch("/api/products");
       const { products } = await response.json();
@@ -15,6 +17,8 @@ export const ProductsDataProvider = ({ children }) => {
       }
     } catch (error) {
       console.log("ERROR", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -35,7 +39,7 @@ export const ProductsDataProvider = ({ children }) => {
     getCategories();
   }, []);
 
-  const value = { productsData, categoriesData };
+  const value = { productsData, categoriesData, isLoading };
   return (
     <ProductsDataContext.Provider value={value}>
       {children}
