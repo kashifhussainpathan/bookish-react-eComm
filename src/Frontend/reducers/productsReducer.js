@@ -73,6 +73,9 @@ export function productsReducer(state, action) {
           BIOGRAPHIES: false,
           SPIRITUALITY: false,
           MYTHOLOGY: false,
+          LITERATURE: false,
+          SCIENCE_FICTION: false,
+          PSYCHOLOGICAL_THRILLER: false,
           ALL_CATEGORY: true,
         },
         collections: {
