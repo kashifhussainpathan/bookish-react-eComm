@@ -187,7 +187,7 @@ const AddressManagement = ({ checkout, profile }) => {
           </div>
 
           <div>
-            {!checkout && profile ? (
+            {!checkout ? (
               <div>
                 {" "}
                 <button
