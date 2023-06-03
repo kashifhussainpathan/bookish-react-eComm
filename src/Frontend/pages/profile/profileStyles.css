@@ -97,15 +97,34 @@
 
 .address-fields textarea {
   width: 280px;
-  height: 100px;
+  height: 50px;
 }
 .update-and-cancel__button {
   margin-right: 0.5rem;
 }
 .address-fields-flex {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 1rem;
+}
+
+.address_choose_state {
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+  width: 130px;
+}
+
+.address_choose_state:hover {
+  border: 2px solid var(--primary-color);
+  outline: none;
+}
+
+.address_choose_state:active {
+  border: 2px solid var(--primary-color);
+  outline: none;
 }
 
 .profile-address {
@@ -290,5 +309,13 @@
   }
   .address-fields input {
     width: auto;
+  }
+  .address_choose_state {
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+    width: 170px;
   }
 }
