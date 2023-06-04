@@ -75,6 +75,23 @@
   text-transform: uppercase;
 }
 
+.password-input-container {
+  position: relative;
+}
+
+.password-input-container input {
+  padding-right: 2.5em; /* Add padding to accommodate the icon */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
 /* Logout Styling */
 .logout-section {
   margin-top: 5rem;
