@@ -17,7 +17,7 @@ export const CartBill = () => {
     deliveryCharge,
   } = useContext(CartContext);
 
-  const { setOrderHistory } = useContext(AddressContext);
+  const { setOrderHistory, addresses } = useContext(AddressContext);
   const navigate = useNavigate();
 
   const loadScript = (src) => {
@@ -72,6 +72,15 @@ export const CartBill = () => {
     paymentObject.open();
   };
 
+  const handlePlaceOrder = () => {
+    if (addresses.length === 0) {
+      toast.error("Please add an address before placing the order");
+      return;
+    }
+
+    displayRazorpay(grandTotal);
+  };
+
   return (
     <div className="cart-price-details-card">
       <div>
@@ -104,7 +113,7 @@ export const CartBill = () => {
         <hr />
         <p>You will save ₹{discountedPrice} on this order</p>
 
-        <button className="button" onClick={() => displayRazorpay(grandTotal)}>
+        <button className="button" onClick={handlePlaceOrder}>
           Place Order
         </button>
       </div>

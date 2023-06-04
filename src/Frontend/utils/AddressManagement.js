@@ -3,7 +3,7 @@ import { AiFillPlusSquare } from "react-icons/ai";
 import { AddressContext } from "../context/address-context";
 import { stateArr } from "./StateArr";
 
-const AddressManagement = ({ checkout, profile }) => {
+const AddressManagement = () => {
   const {
     addresses,
     showAddAddress,

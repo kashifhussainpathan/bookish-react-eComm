@@ -27,7 +27,7 @@ export const AddressProvider = ({ children }) => {
   ]);
 
   const [showAddAddress, setShowAddAddress] = useState(false);
-  const [selectedAddressIndex, setSelectedAddressIndex] = useState(1);
+  const [selectedAddressIndex, setSelectedAddressIndex] = useState(0);
   const [editIndex, setEditIndex] = useState(-1);
   const [newAddress, setNewAddress] = useState({
     name: "",
@@ -55,7 +55,7 @@ export const AddressProvider = ({ children }) => {
 
   const validateAddress = () => {
     for (const key in newAddress) {
-      if (newAddress[key].trim() === "") {
+      if (key !== "optMobileNum" && newAddress[key].trim() === "") {
         return false;
       }
     }
