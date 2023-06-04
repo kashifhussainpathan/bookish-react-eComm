@@ -1,16 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 // Importing css
 import "./authStyles.css";
 
-// import { ProductsNav } from "../products/components/ProductsNav";
+// Importing React Icons
+import { AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiOutlineEye } from "react-icons/ai";
 
 import { AuthContext } from "../../context/auth-context";
 import { Nav } from "../home/homeComponents/Nav";
 
 export const Login = () => {
   const { loginInput, setLoginInput, loginHandler } = useContext(AuthContext);
+  const [showPasswordInLogin, setShowPasswordInLogin] = useState(false);
 
   const loginInputHandler = (e) => {
     const { name, value } = e.target;
@@ -22,6 +25,10 @@ export const Login = () => {
       email: "kashifhussainpathan@gmail.com",
       password: "kashifhussainpathan",
     });
+  };
+
+  const togglePasswordVisibilityLogin = () => {
+    setShowPasswordInLogin(!showPasswordInLogin);
   };
 
   return (
@@ -49,14 +56,27 @@ export const Login = () => {
                 <label>
                   Password<span className="color-text-error">*</span>{" "}
                 </label>
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  name="password"
-                  value={loginInput.password || ""}
-                  onChange={loginInputHandler}
-                  required
-                />
+                <div className="password-input-container">
+                  <input
+                    type={showPasswordInLogin ? "text" : "password"}
+                    placeholder="Enter your password"
+                    name="password"
+                    value={loginInput.password || ""}
+                    onChange={loginInputHandler}
+                    required
+                  />
+                  {showPasswordInLogin ? (
+                    <AiOutlineEyeInvisible
+                      className="password-toggle-icon"
+                      onClick={togglePasswordVisibilityLogin}
+                    />
+                  ) : (
+                    <AiOutlineEye
+                      className="password-toggle-icon"
+                      onClick={togglePasswordVisibilityLogin}
+                    />
+                  )}
+                </div>
               </div>
               <button
                 className="test-credentials-button button"

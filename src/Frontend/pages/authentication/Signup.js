@@ -1,17 +1,27 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 // import { ProductsNav } from "../products/components/ProductsNav";
 import { AuthContext } from "../../context/auth-context";
 import { Nav } from "../home/homeComponents/Nav";
 
+// Importing React Icons
+import { AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiOutlineEye } from "react-icons/ai";
+
 export const Signup = () => {
   const { signupHandler, signupInput, setSignupInput } =
     useContext(AuthContext);
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const signupInputHandler = (e) => {
     const { name, value } = e.target;
     setSignupInput({ ...signupInput, [name]: value });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -48,31 +58,59 @@ export const Signup = () => {
                   required
                 />
               </div>
+
               <div className="input-text-group">
                 <label className="">
                   Password<span className="color-text-error">*</span>{" "}
                 </label>
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  name="password"
-                  value={signupInput.password}
-                  onChange={signupInputHandler}
-                  required
-                />
+                <div className="password-input-container">
+                  {" "}
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter your password"
+                    name="password"
+                    value={signupInput.password}
+                    onChange={signupInputHandler}
+                    required
+                  />
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible
+                      className="password-toggle-icon"
+                      onClick={togglePasswordVisibility}
+                    />
+                  ) : (
+                    <AiOutlineEye
+                      className="password-toggle-icon"
+                      onClick={togglePasswordVisibility}
+                    />
+                  )}
+                </div>
               </div>
               <div className="input-text-group">
                 <label className="">
                   Confirm password<span className="color-text-error">*</span>{" "}
                 </label>
-                <input
-                  type="password"
-                  placeholder="Confirm your password"
-                  name="cnfpassword"
-                  value={signupInput.cnfpassword}
-                  onChange={signupInputHandler}
-                  required
-                />
+                <div className="password-input-container">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Confirm your password"
+                    name="cnfpassword"
+                    value={signupInput.cnfpassword}
+                    onChange={signupInputHandler}
+                    required
+                  />
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible
+                      className="password-toggle-icon"
+                      onClick={togglePasswordVisibility}
+                    />
+                  ) : (
+                    <AiOutlineEye
+                      className="password-toggle-icon"
+                      onClick={togglePasswordVisibility}
+                    />
+                  )}
+                </div>
               </div>
               <button className="create-new-account-btn button" type={"submit"}>
                 Create new account

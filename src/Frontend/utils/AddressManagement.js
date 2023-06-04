@@ -7,7 +7,7 @@ const AddressManagement = ({ checkout, profile }) => {
   const {
     addresses,
     showAddAddress,
-    setShowAddAddress,
+    handleCancel,
     selectedAddressIndex,
     editIndex,
     newAddress,
@@ -136,7 +136,7 @@ const AddressManagement = ({ checkout, profile }) => {
           </button>
           <button
             className="button update-and-cancel__button"
-            onClick={() => setShowAddAddress(false)}
+            onClick={handleCancel}
           >
             Cancel
           </button>
