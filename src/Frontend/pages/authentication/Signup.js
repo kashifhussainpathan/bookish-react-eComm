@@ -92,24 +92,13 @@ export const Signup = () => {
                 </label>
                 <div className="password-input-container">
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type="password"
                     placeholder="Confirm your password"
                     name="cnfpassword"
                     value={signupInput.cnfpassword}
                     onChange={signupInputHandler}
                     required
                   />
-                  {showPassword ? (
-                    <AiOutlineEyeInvisible
-                      className="password-toggle-icon"
-                      onClick={togglePasswordVisibility}
-                    />
-                  ) : (
-                    <AiOutlineEye
-                      className="password-toggle-icon"
-                      onClick={togglePasswordVisibility}
-                    />
-                  )}
                 </div>
               </div>
               <button className="create-new-account-btn button" type={"submit"}>
