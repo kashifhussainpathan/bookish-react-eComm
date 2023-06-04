@@ -117,7 +117,9 @@ footer {
   }
   .footer-contact {
     display: block;
+    text-align: start;
   }
+
   .footer-social {
     display: flex;
     flex-direction: column;
