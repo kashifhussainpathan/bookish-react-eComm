@@ -187,7 +187,7 @@ const AddressManagement = ({ checkout, profile }) => {
           </div>
 
           <div>
-            {!checkout ? (
+            {
               <div>
                 {" "}
                 <button
@@ -203,9 +203,7 @@ const AddressManagement = ({ checkout, profile }) => {
                   Delete
                 </button>
               </div>
-            ) : (
-              ""
-            )}
+            }
           </div>
         </div>
       ))}
