@@ -109,6 +109,20 @@ export const AddressProvider = ({ children }) => {
     setShowAddAddress(false);
   };
 
+  const handleCancel = () => {
+    setEditIndex(-1);
+    setNewAddress({
+      name: "",
+      address: "",
+      city: "",
+      state: "",
+      postalCode: "",
+      mobileNum: "",
+      optMobileNum: "",
+    });
+    setShowAddAddress(false);
+  };
+
   const value = {
     addresses,
     setAddresses,
@@ -130,6 +144,7 @@ export const AddressProvider = ({ children }) => {
     selectedAddress,
     setOrderHistory,
     orderHistory,
+    handleCancel,
   };
   return (
     <AddressContext.Provider value={value}>{children}</AddressContext.Provider>
