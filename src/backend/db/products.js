@@ -631,8 +631,7 @@ export const products = [
     bestseller: true,
     newRelease: false,
     expertPick: false,
-    image:
-      "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91LaNrJqh5L.jpg",
+    image: "https://cdn2.penguin.com.au/covers/400/9780552173148.jpg",
   },
   {
     _id: "43",
